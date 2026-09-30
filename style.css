@@ -1,0 +1,606 @@
+/* ==========================================================================
+   PROJECT WEB BRISKA CAREER - GLOBAL STYLESHEET
+   Theme: Deep Teal Green Gradient + Glassmorphism + Sweep Effect + Neon Glow
+   ========================================================================== */
+
+/* --- 1. CSS VARIABLES & THEME SETUP --- */
+:root {
+  /* Color Palette */
+  --bg-darkest: #011110;
+  --bg-dark: #031e1c;
+  --bg-mid: #063430;
+  --bg-surface: rgba(6, 52, 48, 0.55);
+  --bg-surface-hover: rgba(10, 76, 70, 0.75);
+  
+  /* Neon Accents */
+  --neon-teal: #00ffd5;
+  --neon-cyan: #00f2fe;
+  --neon-green: #00ff88;
+  --neon-glow: rgba(0, 255, 213, 0.4);
+  --neon-glow-strong: rgba(0, 255, 213, 0.8);
+
+  /* Typography Colors */
+  --text-main: #f0fdfa;
+  --text-muted: #99f6e4;
+  --text-dim: #5eead4;
+  
+  /* Glassmorphism Borders & Shadows */
+  --glass-border: 1px solid rgba(0, 255, 213, 0.18);
+  --glass-border-hover: 1px solid rgba(0, 255, 213, 0.5);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+  --neon-shadow: 0 0 20px rgba(0, 255, 213, 0.25);
+  
+  /* Transitions & Radii */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --transition-fast: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- 2. GLOBAL RESET & BASE STYLES --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  background: radial-gradient(circle at 50% 0%, #084c44 0%, var(--bg-dark) 50%, var(--bg-darkest) 100%);
+  background-attachment: fixed;
+  color: var(--text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-darkest);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-mid);
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--bg-darkest);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-teal);
+  box-shadow: 0 0 10px var(--neon-teal);
+}
+
+/* Base Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: var(--neon-teal);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+/* Gradient & Neon Text Utility */
+.text-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, var(--neon-teal) 50%, var(--neon-cyan) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-neon {
+  color: var(--neon-teal);
+  text-shadow: 0 0 8px var(--neon-glow);
+}
+
+/* --- 3. REUSABLE GLASSMORPHISM COMPONENTS --- */
+.glass-panel {
+  background: var(--bg-surface);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: var(--glass-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--glass-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card {
+  background: rgba(6, 52, 48, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card:hover {
+  transform: translateY(-6px);
+  background: var(--bg-surface-hover);
+  border: var(--glass-border-hover);
+  box-shadow: var(--glass-shadow), var(--neon-shadow);
+}
+
+/* --- 4. EFEK SWEEP (LIGHT SWEEP / SHIMMER) --- */
+.sweep-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.sweep-effect::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -75%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(0, 255, 213, 0.25) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(25deg);
+  transition: none;
+  pointer-events: none;
+}
+
+.sweep-effect:hover::after {
+  animation: sweepAnimation 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+@keyframes sweepAnimation {
+  0% { left: -75%; }
+  100% { left: 125%; }
+}
+
+/* --- 5. BUTTONS & CTA --- */
+.btn-neon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.8rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--bg-darkest);
+  background: linear-gradient(135deg, var(--neon-teal), var(--neon-cyan));
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  box-shadow: 0 0 15px var(--neon-glow);
+  transition: var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-neon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px var(--neon-glow-strong);
+  color: #000;
+}
+
+.btn-outline-neon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.7rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--neon-teal);
+  background: rgba(0, 255, 213, 0.05);
+  border: 1px solid var(--neon-teal);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  box-shadow: inset 0 0 10px rgba(0, 255, 213, 0.1);
+  transition: var(--transition-fast);
+}
+
+.btn-outline-neon:hover {
+  background: var(--neon-teal);
+  color: var(--bg-darkest);
+  box-shadow: 0 0 20px var(--neon-glow);
+}
+
+/* --- 6. HEADER & DROPDOWN NAVIGATION --- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(1, 17, 16, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: var(--glass-border);
+  padding: 1rem 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.logo-container img {
+  height: 38px;
+  filter: drop-shadow(0 0 6px var(--neon-teal));
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: var(--text-main);
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: var(--radius-sm);
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--neon-teal);
+  text-shadow: 0 0 8px var(--neon-glow);
+}
+
+/* Glassmorphism Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropbtn {
+  background: none;
+  border: none;
+  color: var(--text-main);
+  font-size: 0.95rem;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  padding: 0.5rem 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.dropbtn::after {
+  content: '▾';
+  font-size: 0.8rem;
+  color: var(--neon-teal);
+  transition: var(--transition-fast);
+}
+
+.dropdown:hover .dropbtn::after {
+  transform: rotate(180deg);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 280px;
+  max-height: 480px;
+  overflow-y: auto;
+  background: rgba(3, 30, 28, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: var(--glass-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--glass-shadow), 0 0 15px rgba(0, 0, 0, 0.6);
+  padding: 0.75rem 0;
+  z-index: 1001;
+  animation: fadeInDown 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  color: var(--text-muted);
+  padding: 0.65rem 1.25rem;
+  display: block;
+  font-size: 0.88rem;
+  border-left: 2px solid transparent;
+}
+
+.dropdown-content a:hover {
+  background: rgba(0, 255, 213, 0.08);
+  color: var(--neon-teal);
+  border-left-color: var(--neon-teal);
+  padding-left: 1.5rem;
+}
+
+/* --- 7. MAIN CONTAINER & LAYOUTS --- */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 0;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.page-header h1 {
+  font-size: 2.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.page-header p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+/* --- 8. HERO SECTION (LANDING PAGE) --- */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  padding: 5rem 0;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+}
+
+.hero-content p {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.hero-image-wrapper {
+  position: relative;
+  border-radius: var(--radius-lg);
+  padding: 8px;
+  background: linear-gradient(135deg, rgba(0, 255, 213, 0.3), transparent);
+}
+
+.hero-image {
+  width: 100%;
+  border-radius: var(--radius-md);
+  display: block;
+  box-shadow: var(--glass-shadow);
+}
+
+/* --- 9. FORMS & INPUTS (LAMARAN PAGE) --- */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.85rem 1.1rem;
+  background: rgba(2, 23, 21, 0.6);
+  border: var(--glass-border);
+  border-radius: var(--radius-sm);
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: var(--transition-fast);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--neon-teal);
+  box-shadow: 0 0 12px var(--neon-glow);
+  background: rgba(3, 30, 28, 0.8);
+}
+
+/* Custom File Upload Box */
+.file-dropzone {
+  border: 2px dashed rgba(0, 255, 213, 0.3);
+  border-radius: var(--radius-md);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  background: rgba(0, 255, 213, 0.02);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.file-dropzone:hover {
+  border-color: var(--neon-teal);
+  background: rgba(0, 255, 213, 0.06);
+  box-shadow: inset 0 0 15px var(--neon-glow);
+}
+
+/* --- 10. JOB LISTINGS GRID & FILTERS (LOWONGAN PAGE) --- */
+.filter-bar {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+  padding: 1.25rem;
+}
+
+.filter-select {
+  flex: 1;
+  min-width: 200px;
+  background: rgba(2, 23, 21, 0.8);
+  color: var(--text-main);
+  border: var(--glass-border);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.job-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.75rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-unit {
+  background: rgba(0, 242, 254, 0.15);
+  color: var(--neon-cyan);
+  border: 1px solid rgba(0, 242, 254, 0.3);
+}
+
+.badge-type {
+  background: rgba(0, 255, 213, 0.15);
+  color: var(--neon-teal);
+  border: 1px solid rgba(0, 255, 213, 0.3);
+}
+
+/* --- 11. FAQ ACCORDION --- */
+.faq-item {
+  margin-bottom: 1rem;
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  padding: 1.25rem 1.5rem;
+  background: var(--bg-surface);
+  border: var(--glass-border);
+  border-radius: var(--radius-sm);
+  color: var(--text-main);
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: var(--transition-fast);
+}
+
+.faq-question:hover {
+  border-color: var(--neon-teal);
+  box-shadow: 0 0 10px var(--neon-glow);
+}
+
+.faq-answer {
+  padding: 1.25rem 1.5rem;
+  background: rgba(1, 17, 16, 0.4);
+  border-top: none;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  color: var(--text-muted);
+}
+
+/* --- 12. MARKDOWN CONTENT STYLING (REKRUTMEN & TENTANG) --- */
+.md-content {
+  line-height: 1.8;
+  color: var(--text-main);
+}
+
+.md-content h2 {
+  font-size: 1.8rem;
+  margin: 2rem 0 1rem 0;
+  color: var(--neon-teal);
+  border-bottom: 1px solid rgba(0, 255, 213, 0.2);
+  padding-bottom: 0.5rem;
+}
+
+.md-content ul, .md-content ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-muted);
+}
+
+.md-content li {
+  margin-bottom: 0.5rem;
+}
+
+.md-content blockquote {
+  border-left: 4px solid var(--neon-teal);
+  background: rgba(0, 255, 213, 0.05);
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+/* --- 13. FOOTER --- */
+footer {
+  background: var(--bg-darkest);
+  border-top: var(--glass-border);
+  padding: 3rem 5% 1.5rem 5%;
+  margin-top: 5rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* --- 14. ANIMATIONS & RESPONSIVE --- */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 992px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  nav {
+    display: none; /* Disiapkan untuk hamburger menu di JS */
+  }
+  
+  .page-header h1 {
+    font-size: 2.1rem;
+  }
+}
