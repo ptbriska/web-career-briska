@@ -4,74 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Briska Career - Together Growth</title>
-    <!-- Google Fonts: Plus Jakarta Sans -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Global CSS -->
+    <!-- Global Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- ==========================================
-         HEADER & NAVIGASI UTAMA
-         ========================================== -->
-    <header>
-        <div class="logo-container">
-            <a href="index.html" style="display: flex; align-items: center; gap: 0.75rem; color: inherit;">
-                <img src="assets/images/logo-briska.png" alt="Briska Logo" onerror="this.style.display='none'">
-                <span class="text-gradient">BRISKA CAREER</span>
-            </a>
-        </div>
+    <!-- WADAH COMPONENT HEADER -->
+    <div id="header-container"></div>
 
-        <nav>
-            <a href="index.html" class="nav-link text-neon">Beranda</a>
-
-            <!-- Dropdown 1: Tentang Briska (A-N) -->
-            <div class="dropdown">
-                <button class="dropbtn">Tentang Briska</button>
-                <div class="dropdown-content">
-                    <a href="pages/tentang/etika-kerja.html">A. Nilai Etika Kerja</a>
-                    <a href="pages/tentang/sikap-kerja.html">B. Nilai Sikap Kerja</a>
-                    <a href="pages/tentang/budaya-teknologi.html">C. Budaya Teknologi</a>
-                    <a href="pages/tentang/work-life-balance.html">D. Budaya Work Life Balance</a>
-                    <a href="pages/tentang/genz-company.html">E. Budaya Gen Z Company</a>
-                    <a href="pages/tentang/jam-kerja.html">F. Jam Kerja</a>
-                    <a href="pages/tentang/cuti-izin.html">G. Proses Cuti & Izin</a>
-                    <a href="pages/tentang/outfit-atribut.html">H. Outfit & Atribut Kerja</a>
-                    <a href="pages/tentang/fasilitas-kantor.html">I. Fasilitas Kantor</a>
-                    <a href="pages/tentang/tradisi-kantor.html">J. Tradisi Kantor</a>
-                    <a href="pages/tentang/jabatan-struktural.html">K. Jabatan Struktural</a>
-                    <a href="pages/tentang/jabatan-fungsional.html">L. Jabatan Fungsional</a>
-                    <a href="pages/tentang/transisi-jabatan.html">M. Transisi Jabatan</a>
-                    <a href="pages/tentang/skema-promosi.html">N. Skema Promosi Jabatan</a>
-                </div>
-            </div>
-
-            <!-- Dropdown 2: Proses Rekrutmen (A-E) -->
-            <div class="dropdown">
-                <button class="dropbtn">Proses Rekrutmen</button>
-                <div class="dropdown-content">
-                    <a href="pages/rekrutmen/tahap-1-administrasi.html">A. Seleksi Tahap 1 Administrasi</a>
-                    <a href="pages/rekrutmen/tahap-2-gct-sct.html">B. Seleksi Tahap 2 GCT & SCT</a>
-                    <a href="pages/rekrutmen/tahap-3-kesehatan-wawancara.html">C. Seleksi Tahap 3 Kesehatan & Wawancara</a>
-                    <a href="pages/rekrutmen/tahap-4-briskanisasi.html">D. Seleksi Tahap 4 Onboarding Briskanisasi</a>
-                    <a href="pages/rekrutmen/tahap-5-pelantikan-mou.html">E. Pelantikan & MoU / PK Permanen</a>
-                </div>
-            </div>
-
-            <a href="pages/lowongan/lowongan.html" class="nav-link">Informasi Lowongan</a>
-            <a href="pages/faq/faq.html" class="nav-link">FAQ Karir</a>
-            
-            <!-- Akses Portal CBT & Web Utama -->
-            <a href="https://cbt.briska.id" target="_blank" class="btn-outline-neon">Portal CBT</a>
-        </nav>
-    </header>
-
-    <!-- ==========================================
-         HERO SECTION (TAGLINE & FOTO TIM)
-         ========================================== -->
+    <!-- KONTEN UTAMA LANDING PAGE -->
     <main class="container">
+        <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
                 <span class="badge badge-type" style="margin-bottom: 1rem;">BRISKA CAREER PORTAL</span>
@@ -97,9 +44,7 @@
             </div>
         </section>
 
-        <!-- ==========================================
-             FILOSOFI TOGETHER GROWTH
-             ========================================== -->
+        <!-- Filosofi Together Growth -->
         <section style="margin: 5rem 0;">
             <div class="page-header">
                 <h2 class="text-gradient">Filosofi Together Growth</h2>
@@ -124,9 +69,7 @@
             </div>
         </section>
 
-        <!-- ==========================================
-             UNIT BISNIS HIGHLIGHT
-             ========================================== -->
+        <!-- Unit Bisnis Highlight -->
         <section class="glass-panel" style="padding: 3rem; margin: 5rem 0;">
             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem;">
                 <div style="max-width: 600px;">
@@ -144,9 +87,7 @@
             </div>
         </section>
 
-        <!-- ==========================================
-             KONTAK & LOKASI
-             ========================================== -->
+        <!-- Kontak & Lokasi -->
         <section style="margin-top: 5rem;">
             <div class="page-header">
                 <h2>Lokasi & Kontak Rekrutmen</h2>
@@ -154,32 +95,26 @@
             </div>
 
             <div class="hero" style="padding: 0; align-items: stretch;">
-                <!-- Card Kontak -->
                 <div class="glass-card">
                     <h3 class="text-neon" style="margin-bottom: 1.5rem;">Hubungi Kami</h3>
-                    
                     <div style="margin-bottom: 1.25rem;">
                         <strong style="color: var(--text-main); display: block;">Email Rekrutmen:</strong>
                         <span style="color: var(--text-muted);">career@briska.id / hr@briska.id</span>
                     </div>
-
                     <div style="margin-bottom: 1.25rem;">
                         <strong style="color: var(--text-main); display: block;">WhatsApp Recruitment Center:</strong>
                         <span style="color: var(--text-muted);">+62 812-3456-7890</span>
                     </div>
-
                     <div style="margin-bottom: 1.25rem;">
                         <strong style="color: var(--text-main); display: block;">Jam Operasional Kantor:</strong>
                         <span style="color: var(--text-muted);">Senin - Jumat | 08.00 - 17.00 WITA</span>
                     </div>
-
                     <div>
                         <strong style="color: var(--text-main); display: block; margin-bottom: 0.5rem;">Situs Utama:</strong>
                         <a href="https://briska.id" target="_blank" class="text-neon">www.briska.id &rarr;</a>
                     </div>
                 </div>
 
-                <!-- Card Lokasi Kantor -->
                 <div class="glass-card">
                     <h3 class="text-neon" style="margin-bottom: 1.5rem;">Kantor Pusat (HQ)</h3>
                     <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
@@ -187,8 +122,6 @@
                         Jl. AP Pettarani, No. 88, Kassi-Kassi, Kec. Rappocini,<br>
                         Kota Makassar, Sulawesi Selatan 90222
                     </p>
-                    
-                    <!-- Box Peta / Visualisasi Alamat -->
                     <div style="width: 100%; height: 180px; border-radius: var(--radius-sm); border: var(--glass-border); background: rgba(1, 17, 16, 0.8); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0.5rem;">
                         <span style="font-size: 2rem;">📍</span>
                         <span style="color: var(--text-muted); font-size: 0.9rem;">Makassar, Sulawesi Selatan</span>
@@ -201,44 +134,10 @@
         </section>
     </main>
 
-    <!-- ==========================================
-         FOOTER
-         ========================================== -->
-    <footer>
-        <div class="footer-content">
-            <div>
-                <h3 class="text-gradient" style="margin-bottom: 1rem;">BRISKA CAREER</h3>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">
-                    Platform karir resmi PT Briska. Bersama-sama membangun ekosistem kerja inovatif dan berdaya saing tinggi.
-                </p>
-            </div>
+    <!-- WADAH COMPONENT FOOTER -->
+    <div id="footer-container"></div>
 
-            <div>
-                <h4 style="margin-bottom: 1rem; color: var(--neon-teal);">Navigasi Cepat</h4>
-                <ul style="list-style: none; font-size: 0.9rem; line-height: 2;">
-                    <li><a href="pages/tentang/etika-kerja.html" style="color: var(--text-muted);">Tentang Kami</a></li>
-                    <li><a href="pages/rekrutmen/tahap-1-administrasi.html" style="color: var(--text-muted);">Proses Rekrutmen</a></li>
-                    <li><a href="pages/lowongan/lowongan.html" style="color: var(--text-muted);">Posisi Terbuka</a></li>
-                    <li><a href="pages/faq/faq.html" style="color: var(--text-muted);">FAQ Karir</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 style="margin-bottom: 1rem; color: var(--neon-teal);">Portal Resmi</h4>
-                <ul style="list-style: none; font-size: 0.9rem; line-height: 2;">
-                    <li><a href="https://briska.id" target="_blank" style="color: var(--text-muted);">Web Briska Utama</a></li>
-                    <li><a href="https://cbt.briska.id" target="_blank" style="color: var(--text-muted);">Portal CBT Test</a></li>
-                    <li><a href="pages/lamaran/lamaran.html" style="color: var(--text-muted);">Form Online Lamaran</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2026 PT Briska. All Rights Reserved. Designed with Together Growth Culture.</p>
-        </div>
-    </footer>
-
-    <!-- Global & Home JS Scripts -->
+    <!-- Scripts -->
     <script src="js/global.js"></script>
     <script src="js/home.js"></script>
 </body>
