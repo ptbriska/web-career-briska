@@ -1,0 +1,167 @@
+[
+  {
+    "kategori": "Umum & Proses Rekrutmen",
+    "pertanyaan": [
+      {
+        "q": "Apakah ada biaya yang harus dibayar selama proses rekrutmen di BRISKA?",
+        "a": "Tidak. Seluruh proses rekrutmen di BRISKA 100% gratis. Kami tidak pernah memungut biaya apapun dari kandidat, mulai dari tahap administrasi hingga pelantikan."
+      },
+      {
+        "q": "Berapa lama proses rekrutmen dari melamar hingga pengumuman akhir?",
+        "a": "Proses rekrutmen memakan waktu sekitar 2 hingga 4 minggu. Rangkaian tes meliputi Seleksi Administrasi, Tes Kompetensi (GCT, SCT, PCT), Tes Kesehatan (MCU), Wawancara, hingga FGD."
+      },
+      {
+        "q": "Apakah saya bisa melamar lebih dari satu posisi secara bersamaan?",
+        "a": "Kami menyarankan Anda untuk fokus melamar pada 1 (satu) posisi yang paling relevan dengan keahlian dan pengalaman utama Anda agar peluang lolos lebih besar."
+      },
+      {
+        "q": "Apakah BRISKA menerima fresh graduate (lulusan baru)?",
+        "a": "Ya, kami sangat terbuka untuk fresh graduate pada posisi tertentu, terutama bagi kandidat yang memiliki portofolio proyek, aktif berorganisasi, dan memiliki kemauan belajar yang tinggi."
+      },
+      {
+        "q": "Bagaimana saya akan dihubungi mengenai status lamaran saya?",
+        "a": "Semua pengumuman, baik lolos maupun tidak, akan diinformasikan secara resmi melalui email yang Anda daftarkan serta melalui portal rekrutmen BRISKA."
+      },
+      {
+        "q": "Apa format CV dan dokumen yang disarankan saat melamar?",
+        "a": "Gunakan format PDF untuk CV dan kelengkapan ijazah. Untuk posisi kreatif atau teknis, Anda sangat disarankan menyertakan tautan (link) portofolio atau Google Drive yang bisa diakses publik."
+      },
+      {
+        "q": "Apakah ada batasan usia untuk melamar di BRISKA?",
+        "a": "BRISKA tidak memiliki batasan usia kaku. Kami lebih mengutamakan kompetensi, mindset adaptif, dan kecocokan dengan budaya Gen-Z Company."
+      },
+      {
+        "q": "Saya berdomisili di luar Makassar, apakah bisa melamar?",
+        "a": "Bisa. Kami memiliki opsi kerja WFA (Work From Anywhere) untuk beberapa posisi, atau Anda diharapkan bersedia direlokasi ke Makassar jika posisi tersebut mewajibkan sistem WFO."
+      }
+    ]
+  },
+  {
+    "kategori": "Tahapan Tes & Wawancara",
+    "pertanyaan": [
+      {
+        "q": "Apa itu seleksi GCT dan SCT?",
+        "a": "GCT (General Competence Test) menguji logika, bahasa, numerik, dan wawasan perusahaan. Sedangkan SCT (Skill Competence Test) menguji kemampuan teknis spesifik sesuai posisi yang dilamar. Keduanya dilakukan secara online via platform CBT Kelas Bisa."
+      },
+      {
+        "q": "Apa yang dimaksud dengan PCT (Project Competence Test)?",
+        "a": "PCT adalah tugas berbasis studi kasus nyata (take-home assignment) yang diberikan selama 3 hingga 5 hari. Tujuannya untuk melihat cara Anda mengeksekusi dan memecahkan masalah terkait pekerjaan."
+      },
+      {
+        "q": "Apakah tahapan tes dilakukan secara online atau offline?",
+        "a": "Sebagian besar tes (Administrasi, GCT, SCT, PCT) dilakukan secara online. Namun, untuk FGD dan Wawancara dapat dilakukan secara hybrid (online atau offline di kantor pusat)."
+      },
+      {
+        "q": "Apa yang dinilai dalam tahap FGD (Focus Group Discussion)?",
+        "a": "Kami menilai kemampuan komunikasi asertif, kerja sama tim, kemampuan mendengarkan aktif (active listening), serta jiwa kepemimpinan dalam merumuskan solusi bersama."
+      },
+      {
+        "q": "Di mana saya harus melakukan Medical Check-Up (MCU)?",
+        "a": "MCU dapat dilakukan secara mandiri di fasilitas kesehatan terdekat (Puskesmas, Klinik, atau RS). Anda hanya perlu mengunggah Surat Keterangan Sehat Jasmani resmi yang dicap dan ditandatangani dokter."
+      },
+      {
+        "q": "Jika saya tidak lolos, apakah saya bisa melamar lagi di masa depan?",
+        "a": "Tentu saja. Namun, untuk kandidat yang tidak lolos masa probation (Latsar), tidak diperkenankan melamar kembali selama 12 bulan ke depan."
+      }
+    ]
+  },
+  {
+    "kategori": "Sistem Kerja & Budaya Perusahaan",
+    "pertanyaan": [
+      {
+        "q": "Apakah BRISKA menerapkan sistem kerja WFO, WFA, atau Hybrid?",
+        "a": "Sistem kerja bersifat adaptif tergantung kebijakan direksi dan jenis pekerjaan. Kami bisa menerapkan WFO penuh, WFA penuh, atau Hybrid (misal 3 hari di kantor, 2 hari di rumah)."
+      },
+      {
+        "q": "Berapa jam kerja operasional harian di BRISKA?",
+        "a": "Jam kerja resmi adalah pukul 08.00 hingga 17.00 WITA, hari Senin sampai Jumat, dengan waktu istirahat pukul 12.00 hingga 13.00 WITA."
+      },
+      {
+        "q": "Apakah ada sistem uang lembur di BRISKA?",
+        "a": "BRISKA tidak menganut sistem lembur per jam. Kami menerapkan skema 'Crossfill' atau redistribusi jam kerja. Jam lembur saat event/deadline akan dikompensasi dengan pengurangan jam kerja di hari lain atau penyesuaian hari libur."
+      },
+      {
+        "q": "Bagaimana aturan pakaian (outfit) harian di BRISKA?",
+        "a": "Senin-Selasa Smart Casual, Rabu Kemeja PDL Divisi (contoh: Kelas Bisa biru muda), Kamis PDL Departemen (abu-abu dengan list warna), dan Jumat memakai Batik."
+      },
+      {
+        "q": "Apa itu program LATSAR Briskanisasi?",
+        "a": "Latsar Briskanisasi adalah masa probation 3 bulan (12 minggu) bagi staf baru. Terdiri dari pemahaman budaya IKHLAS, product knowledge, dan eksekusi proyek mini inovasi sebelum diangkat menjadi karyawan tetap."
+      },
+      {
+        "q": "Seperti apa budaya 'Gen-Z Company' di BRISKA?",
+        "a": "Kami menolak hierarki kaku, senioritas, dan toxic environment. Kami sangat mengedepankan digital first, inovasi tanpa batas, keterbukaan (anti-baper terhadap feedback), dan kesejahteraan mental."
+      },
+      {
+        "q": "Bagaimana etika kerja terkait ibadah (terutama sholat)?",
+        "a": "Karyawan sangat dilarang menunda sholat ketika adzan berkumandang, kecuali dalam keadaan force majeure (seperti melayani klien). Kerja adalah ibadah, dan ibadah adalah pondasinya."
+      },
+      {
+        "q": "Apa itu tradisi 'Kreatif Gila Day' dan 'Hari Kritik'?",
+        "a": "Kreatif Gila Day (tgl 14) adalah hari bebas berekspresi mengenakan outfit tematik/nyentrik. Hari Kritik (tgl 24) adalah forum terbuka di mana staf bebas mengkritik kebijakan atau atasan secara elegan asalkan disertai solusi."
+      }
+    ]
+  },
+  {
+    "kategori": "Cuti, Fasilitas, & Jenjang Karir",
+    "pertanyaan": [
+      {
+        "q": "Berapa jumlah hak cuti tahunan bagi staf BRISKA?",
+        "a": "Staf tetap mendapatkan hak cuti tahunan sebanyak 15 hari kerja/tahun. Jika tidak terpakai, dapat di-carry over maksimal 5 hari ke tahun berikutnya."
+      },
+      {
+        "q": "Apa itu program cuti BRISKADVENTURE?",
+        "a": "BRISKADVENTURE adalah apresiasi tertinggi tahunan berupa hadiah perjalanan liburan gratis selama 4 hari (biaya tiket & akomodasi ditanggung) untuk karyawan dengan skor evaluasi MONJA terbaik."
+      },
+      {
+        "q": "Apakah BRISKA memfasilitasi cuti haid dan cuti melahirkan?",
+        "a": "Ya. Terdapat cuti haid maksimal 1 hari, cuti melahirkan selama 2 bulan (0,5 bulan sebelum dan 1,5 bulan setelahnya), serta cuti pendampingan suami selama 3 hari."
+      },
+      {
+        "q": "Bagaimana jika saya sakit mendadak di pagi hari kerja?",
+        "a": "Anda diwajibkan melapor ke atasan atau HR maksimal pukul 09.00 WITA dan menyusulkan bukti (foto obat/surat dokter). Jika tanpa kabar, akan dihitung sebagai Alpa."
+      },
+      {
+        "q": "Apakah jalur karir di BRISKA hanya untuk menjadi Manajer?",
+        "a": "Tidak. Ada dua jalur: Jalur Struktural (pemimpin/manajer) dan Jalur Fungsional (spesialisasi karir berdasarkan masa kerja seperti Staf Senior dan Staf Ahli bagi yang tidak ingin jadi pemimpin formal)."
+      },
+      {
+        "q": "Bagaimana cara naik jabatan ke level kepemimpinan (Struktural)?",
+        "a": "Melalui sistem Lelang Jabatan Internal. Kandidat harus memiliki skor MONJA minimal 85%, lulus tes kepemimpinan via LMS, dan melewati wawancara panel Direksi."
+      }
+    ]
+  },
+  {
+    "kategori": "Kemitraan Pengajar (Tutor Kelas Bisa)",
+    "pertanyaan": [
+      {
+        "q": "Apa perbedaan melamar sebagai Staf Internal dan Tutor Kelas Bisa?",
+        "a": "Staf Internal adalah karyawan tetap/kontrak di struktur manajemen BRISKA. Tutor Kelas Bisa adalah mitra pengajar profesional lepas (freelance) yang berfokus pada kegiatan belajar-mengajar."
+      },
+      {
+        "q": "Apa saja bidang pengajaran yang tersedia untuk Tutor Kelas Bisa?",
+        "a": "Kami mencari tutor untuk Kelas Bisa Juara (Olimpiade, PKM), Kelas Bisa Lulus (UTBK, CPNS, Kedinasan), dan Kelas Bisa Skill (Software, Bahasa, Softskill)."
+      },
+      {
+        "q": "Bagaimana skema pembayaran/honorarium untuk Tutor Kelas Bisa?",
+        "a": "Terdapat dua skema. 1) Kelas Live Zoom menggunakan tarif tetap rata-rata Rp75k-Rp150k per jam. 2) Kelas Video Digital dapat memilih dibayar putus di awal atau sistem Passive Income (Royalti bulanan 25% dari total penjualan)."
+      },
+      {
+        "q": "Apakah Tutor diwajibkan membuat materi ajar dan soal sendiri?",
+        "a": "Sangat disarankan untuk orisinalitas, namun Tim Kurikulum kami siap membantu menyediakan template silabus, slide desain, dan bank soal jika dibutuhkan."
+      },
+      {
+        "q": "Apakah boleh mendaftar sebagai Tutor Kelas Bisa jika saya masih bekerja penuh waktu di tempat lain?",
+        "a": "Tentu saja boleh! Sistem kami sangat fleksibel. Anda bisa menyesuaikan jadwal mengajar Live atau memilih merekam video di waktu luang Anda."
+      },
+      {
+        "q": "Apa keuntungan jangka panjang menjadi Tutor Kelas Bisa?",
+        "a": "Selain eksposur skala nasional dan passive income, tutor dengan poin loyalitas tinggi akan difasilitasi untuk mengikuti Training of Trainer (ToT) BNSP Gratis untuk mendapat sertifikasi negara."
+      },
+      {
+        "q": "Jika saya ingin membantu materi tetapi tidak ingin tampil di video, apakah bisa?",
+        "a": "Bisa. Kami memiliki peluang kemitraan sebagai Ghostwriter atau Content Producer kurikulum di luar jadwal tampil mengajar."
+      }
+    ]
+  }
+]
