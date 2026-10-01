@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lowongan Karir Futuristik - Briska Career</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../../style.css">
+    <!-- Marked.js CDN for Rendering Markdown -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+
+    <!-- WADAH COMPONENT HEADER -->
+    <div id="header-container"></div>
+
+    <main class="container" style="padding-top: 2rem; padding-bottom: 5rem;">
+        
+        <!-- Header Section -->
+        <div class="page-header" style="text-align: left; margin-bottom: 2.5rem;">
+            <span class="badge badge-type">PORTAL KARIR & KEMITRAAN</span>
+            <h1 class="text-gradient">Eksplorasi Peluang Karir</h1>
+            <p>Bergabunglah bersama ekosistem EdCorp BRISKA. Pilih peran impianmu dan jadilah bagian dari transformasi digital.</p>
+        </div>
+
+        <!-- LAYOUT UTAMA: SIDEBAR FILTER (KIRI) + JOB GRID (KANAN) -->
+        <div style="display: grid; grid-template-columns: 280px 1fr; gap: 2rem; align-items: start;">
+            
+            <!-- SIDEBAR PANEL FILTER (KIRI) -->
+            <aside class="glass-panel" style="padding: 1.8rem; position: sticky; top: 90px; border: 1px solid rgba(0, 255, 213, 0.2);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                    <h3 style="margin: 0; font-size: 1.1rem;" class="text-neon">⚡ Filter Lowongan</h3>
+                    <button id="btn-reset-filter" style="background: none; border: none; color: var(--text-muted); font-size: 0.8rem; cursor: pointer; text-decoration: underline;">Reset</button>
+                </div>
+
+                <!-- Input Cari Keyword -->
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 0.5rem;">Pencarian Kata Kunci</label>
+                    <input type="text" id="filter-search" class="form-control" placeholder="Cari posisi/skill..." style="width: 100%; font-size: 0.9rem;">
+                </div>
+
+                <!-- Filter Unit Bisnis -->
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 0.5rem;">Unit Bisnis</label>
+                    <select id="filter-unit" class="form-control" style="width: 100%; font-size: 0.9rem;">
+                        <option value="">Semua Unit Bisnis</option>
+                        <option value="Kelas Bisa">Kelas Bisa</option>
+                        <option value="Pena Bisa">Pena Bisa</option>
+                        <option value="Pakkakasa Digipro">Pakkakasa Digipro</option>
+                        <option value="Barugahub">Barugahub</option>
+                        <option value="Apacaconsulting">Apacaconsulting</option>
+                    </select>
+                </div>
+
+                <!-- Filter Departemen -->
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 0.5rem;">Departemen</label>
+                    <select id="filter-dept" class="form-control" style="width: 100%; font-size: 0.9rem;">
+                        <option value="">Semua Departemen</option>
+                        <option value="Education & Academic">Education & Academic</option>
+                        <option value="Technology">Technology</option>
+                        <option value="Production">Production</option>
+                        <option value="Creative Media">Creative Media</option>
+                        <option value="Marketing & Sales">Marketing & Sales</option>
+                    </select>
+                </div>
+
+                <!-- Filter Status Lowongan -->
+                <div>
+                    <label style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 0.5rem;">Status Ketersediaan</label>
+                    <select id="filter-status" class="form-control" style="width: 100%; font-size: 0.9rem;">
+                        <option value="">Semua Status</option>
+                        <option value="true">🟢 Masih Buka (Aktif)</option>
+                        <option value="false">🔴 Sudah Ditutup</option>
+                    </select>
+                </div>
+            </aside>
+
+            <!-- CONTAINER BLOK/GRID CARD LOWONGAN (KANAN) -->
+            <section>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <span id="job-count" style="font-size: 0.9rem; color: var(--text-muted);">Menampilkan 0 Lowongan</span>
+                </div>
+
+                <!-- GRID CARD -->
+                <div id="job-cards-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem;">
+                    <div class="glass-card" style="text-align: center; grid-column: 1/-1;">Memuat portal lowongan...</div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- MODAL POPUP FUTURISTIK UNTUK DETAIL LOWONGAN MARKDOWN -->
+    <div id="job-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(5, 12, 24, 0.85); backdrop-filter: blur(12px); z-index: 9999; justify-content: center; align-items: center; padding: 2rem;">
+        <div class="glass-panel" style="width: 100%; max-width: 800px; max-height: 85vh; overflow-y: auto; padding: 2.5rem; position: relative; border: 1px solid var(--neon-teal); box-shadow: 0 0 30px rgba(0, 255, 213, 0.2);">
+            
+            <button id="close-modal" style="position: absolute; top: 1.5rem; right: 1.5rem; background: rgba(255,255,255,0.1); border: none; color: #fff; width: 36px; height: 36px; border-radius: 50%; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center;">✕</button>
+            
+            <!-- Container Isi Render Markdown -->
+            <div id="modal-markdown-content" class="markdown-body"></div>
+
+            <!-- Footer Action Button dalam Modal -->
+            <div id="modal-action-footer" style="margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(0, 255, 213, 0.15); text-align: center;"></div>
+        </div>
+    </div>
+
+    <!-- WADAH COMPONENT FOOTER -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../js/global.js"></script>
+    <script src="../../js/lowongan.js"></script>
+</body>
+</html>
