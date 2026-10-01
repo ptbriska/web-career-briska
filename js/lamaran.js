@@ -10,17 +10,19 @@ const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzzSNBW9hxGScRo
 
 document.addEventListener("DOMContentLoaded", function () {
     const selectPosisi = document.getElementById("posisi_dilamar");
-    const selectDept = document.getElementById("departemen");
+    const inputDept = document.getElementById("departemen");
     const inputKode = document.getElementById("kode_pendaftaran");
     const btnGenerateCode = document.getElementById("btn-generate-code");
     const formLamaran = document.getElementById("form-lamaran");
     const submitStatus = document.getElementById("submit-status");
 
     const basePath = "../../";
+    let loadedJobs = [];
 
-    // 1. Map Singkatan Kode Departemen
+    // 1. Mapping Singkatan Kode Departemen
     const deptCodeMap = {
         "Kaka Pengajar": "KPG",
+        "Education & Academic": "KPG",
         "Technology": "TEC",
         "Production": "PRD",
         "Finance": "FIN",
@@ -31,10 +33,11 @@ document.addEventListener("DOMContentLoaded", function () {
         "Marketing & Sales": "MKT"
     };
 
-    // 2. Fetch Active Jobs from jobs.json
+    // 2. Fetch Active Jobs from jobs.json & Populate Select
     fetch(`${basePath}data/jobs.json`)
         .then(res => res.json())
         .then(jobs => {
+            loadedJobs = jobs;
             selectPosisi.innerHTML = '<option value="">-- Pilih Posisi yang Dilamar --</option>';
 
             // Filter hanya posisi yang status_tersedia === true
@@ -48,19 +51,20 @@ document.addEventListener("DOMContentLoaded", function () {
             activeJobs.forEach(job => {
                 const option = document.createElement("option");
                 option.value = `${job.judul} (${job.unit})`;
-                option.dataset.unit = job.unit;
-                option.dataset.jobId = job.id;
+                option.dataset.id = job.id;
+                option.dataset.dept = job.departemen || "General Administration";
                 option.innerText = `${job.judul} - ${job.unit} [${job.tipe}]`;
                 selectPosisi.appendChild(option);
             });
 
-            // Auto select posisi jika ada parameter URL ?job_id=...
+            // Auto-select posisi jika diakses dari tombol detail URL ?job_id=...
             const urlParams = new URLSearchParams(window.location.search);
             const targetJobId = urlParams.get("job_id");
             if (targetJobId) {
                 const foundJob = activeJobs.find(j => j.id === targetJobId);
                 if (foundJob) {
                     selectPosisi.value = `${foundJob.judul} (${foundJob.unit})`;
+                    handlePositionChange(); // Trigger Auto-fill
                 }
             }
         })
@@ -69,41 +73,61 @@ document.addEventListener("DOMContentLoaded", function () {
             selectPosisi.innerHTML = '<option value="">-- Gagal memuat posisi --</option>';
         });
 
-    // 3. Logic Random Code Maker
-    function generateRegistrationCode() {
-        const selectedDept = selectDept.value;
-        if (!selectedDept) {
-            alert("Silakan pilih DEPARTEMEN TUJUAN terlebih dahulu sebelum generate kode!");
-            selectDept.focus();
+    // 3. Logic Auto-Fill Departemen & Auto-Generate Kode saat Posisi Berubah
+    function handlePositionChange() {
+        const selectedOption = selectPosisi.options[selectPosisi.selectedIndex];
+        
+        if (!selectedOption || !selectedOption.dataset.dept) {
+            inputDept.value = "";
+            inputKode.value = "";
             return;
         }
 
-        const deptCode = deptCodeMap[selectedDept] || "GEN";
-        const randomNumber = Math.floor(1000 + Math.random() * 9000); // 4 Digit Random
-        const generatedCode = `BRK-${deptCode}-${randomNumber}`;
-        
-        inputKode.value = generatedCode;
+        // Auto-fill nama departemen
+        const deptName = selectedOption.dataset.dept;
+        inputDept.value = deptName;
+
+        // Auto-generate kode pendaftaran
+        generateCode(deptName);
     }
 
-    if (btnGenerateCode) btnGenerateCode.addEventListener("click", generateRegistrationCode);
-    if (selectDept) selectDept.addEventListener("change", generateRegistrationCode);
+    // 4. Function Generate Kode Random
+    function generateCode(deptName) {
+        if (!deptName) {
+            deptName = inputDept.value;
+        }
 
-    // 4. Helper Function: Convert File to Base64
+        if (!deptName) {
+            alert("Silakan pilih POSISI YANG DILAMAR terlebih dahulu!");
+            selectPosisi.focus();
+            return;
+        }
+
+        const deptCode = deptCodeMap[deptName] || "GEN";
+        const randomNumber = Math.floor(1000 + Math.random() * 9000); // 4 Digit Random
+        inputKode.value = `BRK-${deptCode}-${randomNumber}`;
+    }
+
+    // Event Listeners untuk Posisi & Tombol Generate Ulang Kode
+    if (selectPosisi) selectPosisi.addEventListener("change", handlePositionChange);
+    if (btnGenerateCode) btnGenerateCode.addEventListener("click", () => generateCode(inputDept.value));
+
+    // 5. Helper: File to Base64
     function fileToBase64(file) {
         return new Promise((resolve, reject) => {
             const reader = new FileReader();
             reader.readAsDataURL(file);
-            reader.onload = () => resolve(reader.result.split(',')[1]); // Ambil string base64 tanpa header data:application/pdf;base64,
+            reader.onload = () => resolve(reader.result.split(',')[1]);
             reader.onerror = error => reject(error);
         });
     }
 
-    // 5. Form Submit Handler
+    // 6. Form Submission Handler
     formLamaran.addEventListener("submit", async function (e) {
         e.preventDefault();
 
         if (!inputKode.value) {
-            generateRegistrationCode();
+            handlePositionChange();
         }
 
         const btnSubmit = document.getElementById("btn-submit");
@@ -112,7 +136,6 @@ document.addEventListener("DOMContentLoaded", function () {
         submitStatus.innerHTML = `<span style="color: var(--neon-teal);">Sedang memproses berkas PDF Anda, mohon tunggu...</span>`;
 
         try {
-            // Processing Base64 Files
             const filePengalaman = document.getElementById("file_pengalaman").files[0];
             const fileSuratLamaran = document.getElementById("file_surat_lamaran").files[0];
             const fileCV = document.getElementById("file_cv").files[0];
@@ -129,14 +152,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 timestamp: new Date().toISOString(),
                 kode_pendaftaran: inputKode.value,
                 nama_lengkap: document.getElementById("nama_lengkap").value,
-                departemen: selectDept.value,
+                departemen: inputDept.value,
                 alamat_domisili: document.getElementById("alamat_domisili").value,
                 email: document.getElementById("email").value,
                 no_hp: document.getElementById("no_hp").value,
                 posisi_dilamar: selectPosisi.value,
                 pendidikan_terakhir: document.getElementById("pendidikan_terakhir").value,
                 
-                // Base64 & File Metadata
                 files: {
                     pengalaman: { name: filePengalaman.name, data: base64Pengalaman },
                     surat_lamaran: { name: fileSuratLamaran.name, data: base64Surat },
@@ -145,24 +167,23 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             };
 
-            // Post Data to GAS Web App (If URL is default placeholder, show simulated success)
+            // Post Data ke GAS
             if (GAS_WEB_APP_URL.includes("YOUR_GOOGLE_APPS_SCRIPT")) {
-                console.log("Simulasi payload terkirim ke GAS:", payload);
+                console.log("Simulasi Payload ke GAS:", payload);
                 setTimeout(() => {
                     submitStatus.innerHTML = `
                         <div style="background: rgba(0, 255, 128, 0.15); border: 1px solid #00ff80; color: #00ff80; padding: 1.2rem; border-radius: 8px; margin-top: 1rem;">
                             ✅ <strong>Pendaftaran Berhasil! (Simulasi Mode)</strong><br>
                             Kode Pendaftaran Anda: <strong>${payload.kode_pendaftaran}</strong>.<br>
-                            Bukti pendaftaran telah tersimpan. Silakan simpan Kode Pendaftaran Anda.
+                            Departemen: <strong>${payload.departemen}</strong>.
                         </div>`;
                     formLamaran.reset();
                     btnSubmit.disabled = false;
                     btnSubmit.innerText = "Kirim Formulir Lamaran Sekarang";
-                }, 1500);
+                }, 1200);
                 return;
             }
 
-            // Real Production Request to Google Apps Script
             const response = await fetch(GAS_WEB_APP_URL, {
                 method: "POST",
                 headers: { "Content-Type": "text/plain;charset=utf-8" },
@@ -176,16 +197,18 @@ document.addEventListener("DOMContentLoaded", function () {
                     <div style="background: rgba(0, 255, 128, 0.15); border: 1px solid #00ff80; color: #00ff80; padding: 1.2rem; border-radius: 8px; margin-top: 1rem;">
                         🎉 <strong>Lamaran Anda Berhasil Terkirim!</strong><br>
                         Kode Pendaftaran Anda: <strong>${payload.kode_pendaftaran}</strong>.<br>
-                        Simpan kode ini untuk keperluan verifikasi. Tim HRD PT Briska akan menghubungi Anda via Email/WhatsApp.
+                        Simpan kode ini untuk verifikasi. Tim HRD PT Briska akan menghubungi Anda via Email/WhatsApp.
                     </div>`;
                 formLamaran.reset();
+                inputDept.value = "";
+                inputKode.value = "";
             } else {
                 throw new Error(result.message || "Gagal menyimpan data.");
             }
 
         } catch (err) {
             console.error("Submission Error:", err);
-            submitStatus.innerHTML = `<span style="color: #ff4d4d;">❌ Terjadi kesalahan saat mengirim lamaran: ${err.message}. Pastikan ukuran PDF di bawah 5MB.</span>`;
+            submitStatus.innerHTML = `<span style="color: #ff4d4d;">❌ Terjadi kesalahan: ${err.message}. Pastikan ukuran PDF di bawah 5MB.</span>`;
         } finally {
             btnSubmit.disabled = false;
             btnSubmit.innerText = "Kirim Formulir Lamaran Sekarang";
