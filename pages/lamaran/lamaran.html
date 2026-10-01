@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Seleksi Administrasi - Briska Career</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <!-- WADAH COMPONENT HEADER -->
+    <div id="header-container"></div>
+
+    <main class="container" style="padding-top: 2rem; padding-bottom: 5rem; max-width: 900px;">
+        
+        <!-- TEKS SAMBUTAN FORMULIR SELEKSI -->
+        <div class="glass-panel" style="padding: 2.5rem; margin-bottom: 2.5rem; border-left: 4px solid var(--neon-teal);">
+            <span class="badge badge-type" style="margin-bottom: 1rem;">REKRUTMEN ONLINE</span>
+            <h1 class="text-gradient" style="font-size: 1.8rem; margin-bottom: 1rem;">Selamat datang di Formulir Seleksi Administrasi Rekrutmen Online PT Briska!</h1>
+            
+            <p style="font-size: 0.95rem; line-height: 1.6; color: rgba(255,255,255,0.9); margin-bottom: 1.2rem;">
+                Formulir ini merupakan tahap awal proses seleksi administrasi yang wajib diisi oleh seluruh pelamar. Silakan lengkapi data secara akurat dan jujur sesuai dengan identitas serta kualifikasi Anda. Informasi yang Anda berikan akan menjadi bahan evaluasi awal dalam proses penyaringan kandidat potensial.
+            </p>
+
+            <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; font-size: 0.88rem; color: var(--neon-teal); margin-bottom: 1.2rem; background: rgba(0, 255, 213, 0.05); padding: 0.8rem 1.2rem; border-radius: 8px;">
+                <span>🌐 <strong>Website Resmi:</strong> www.briska.co.id</span>
+                <span>📱 <strong>Kontak Informasi:</strong> 0811 9944 511</span>
+            </div>
+
+            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1rem;">
+                Mohon pastikan Anda mengisi seluruh kolom yang diwajibkan. Formulir ini secara otomatis mengumpulkan email sebagai identitas responden untuk kebutuhan administrasi lebih lanjut.
+            </p>
+
+            <div style="font-size: 0.9rem; font-weight: 600; color: #fff;">
+                Jadilah bagian dari transformasi korporat kami.<br>
+                <span style="font-weight: 400; color: rgba(255,255,255,0.8);">PT Briska percaya bahwa SDM unggul adalah fondasi utama menuju pertumbuhan bisnis berkelanjutan.</span>
+            </div>
+
+            <div style="margin-top: 1rem; font-size: 0.8rem; color: var(--neon-teal); font-weight: 700;">
+                #Briskacareer #GrowToContribute #SpiritforSociety
+            </div>
+        </div>
+
+        <!-- FORMULIR INPUT PELAMAR -->
+        <form id="form-lamaran" class="glass-panel" style="padding: 2.5rem;">
+            <h2 style="font-size: 1.3rem; margin-bottom: 1.8rem;" class="text-neon">📋 Data Diri & Berkas Lamaran</h2>
+
+            <!-- 1. NAMA LENGKAP -->
+            <div style="margin-bottom: 1.5rem;">
+                <label style="display: block; font-size: 0.88rem; margin-bottom: 0.5rem; color: #fff;">NAMA LENGKAP <span style="color: #ff4d4d;">*</span></label>
+                <input type="text" id="nama_lengkap" name="nama_lengkap" class="form-control" required placeholder="Masukkan nama lengkap sesuai KTP" style="width: 100%;">
+            </div>
+
+            <!-- 2. DEPARTEMEN & KODE PENDAFTARAN -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-bottom: 1.5rem;">
+                <div>
+                    <label style="display: block; font-size: 0.88rem; margin-bottom: 0.5rem; color: #fff;">DEPARTEMEN TUJUAN <span style="color: #ff4d4d;">*</span></label>
+                    <select id="departemen" name="departemen" class="form-control" required style="width: 100%;">
+                        <option value="">-- Pilih Departemen --</option>
+                        <option value="Kaka Pengajar">Kaka Pengajar</option>
+                        <option value="Technology">Technology</option>
+                        <option value="Production">Production</option>
+                        <option value="Finance">Finance</option>
+                        <option value="Human Resource">Human Resource</option>
+                        <option value="Product Research & Development">Product Research & Development</option>
+                        <option value="Creative Media">Creative Media</option>
+                        <option value="General Administration">General Administration</option>
+                        <option value="Marketing & Sales">Marketing & Sales</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label style="display: block; font-size: 0.88rem; margin-bottom: 0.5rem; color: #fff;">KODE PENDAFTARAN <span style="color: #ff4d4d;">*</span></label>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <input type="text" id="kode_pendaftaran" name="kode_pendaftaran" class="form-control" readonly required placeholder="Klik Generate Kode" style="width: 100%; background: rgba(0,0,0,0.3); font-family: monospace; letter-spacing: 1px; color: var(--neon-teal); font-weight: 700;">
+                        <button type="button" id="btn-generate-code" class="btn-neon" style="white-space: nowrap; font-size: 0.8rem; padding: 0.6rem 1rem;">Generate Kode</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. ALAMAT DOMISILI -->
+            <div style="margin-bottom: 1.5rem;">
+                <label style="display: block; font-size: 0.88rem; margin-bottom: 0.5rem; color: #fff;">ALAMAT DOMISILI <span style="color: #ff4d4d;">*</span></label>
+                <textarea id="alamat_domisili" name="alamat_domisili" class="form-control" rows="3" required placeholder="Alamat lengkap domisili saat ini (Kota, Provinsi)" style="width: 100%;"></textarea>
+            </div>
+
+            <!-- 4. EMAIL & NO TELP/WA -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-bottom: 1.5rem;">
+                <div>
+                    <label style="display: block; font-size: 0.88rem; margin-bottom: 0.5rem; color: #fff;">ALAMAT EMAIL <span style="color: #ff4d4d;">*</span></label>
+                    <input type="email" id="email" name="email" class="form-control" required placeholder="contoh@email.com" style="width: 100%;">
+                </div>
+                <div>
+                    <label style="display: block; font-size: 0.88rem; margin-bottom: 0.5rem; color: #fff;">NO. TELP / WHATSAPP <span style="color: #ff4d4d;">*</span></label>
+                    <input type="tel" id="no_hp" name="no_hp" class="form-control" required placeholder="08xxxxxxxxxx" style="width: 100%;">
+                </div>
+            </div>
+
+            <!-- 5. POSISI YANG DILAMAR (POPULATED VIA JOBS.JSON) -->
+            <div style="margin-bottom: 1.5rem;">
+                <label style="display: block; font-size: 0.88rem; margin-bottom: 0.5rem; color: #fff;">POSISI YANG DILAMAR <span style="color: #ff4d4d;">*</span></label>
+                <select id="posisi_dilamar" name="posisi_dilamar" class="form-control" required style="width: 100%;">
+                    <option value="">-- Memuat Posisi Tersedia... --</option>
+                </select>
+            </div>
+
+            <!-- 6. PENDIDIKAN TERAKHIR -->
+            <div style="margin-bottom: 2rem;">
+                <label style="display: block; font-size: 0.88rem; margin-bottom: 0.5rem; color: #fff;">PENDIDIKAN TERAKHIR <span style="color: #ff4d4d;">*</span></label>
+                <input type="text" id="pendidikan_terakhir" name="pendidikan_terakhir" class="form-control" required placeholder="Format: JENJANG - JURUSAN - UNIVERSITAS (Contoh: S1 - AKUNTANSI - UNIVERSITAS HASANUDDIN)" style="width: 100%;">
+            </div>
+
+            <hr style="border-color: rgba(0, 255, 213, 0.1); margin: 2rem 0;">
+
+            <h3 style="font-size: 1.1rem; margin-bottom: 1.5rem;" class="text-neon">📁 Unggah Berkas Persyaratan (Format .PDF, Max 5MB per file)</h3>
+
+            <!-- 7. UPLOAD PENGALAMAN MAGANG/KERJA -->
+            <div style="margin-bottom: 1.5rem;">
+                <label style="display: block; font-size: 0.88rem; margin-bottom: 0.5rem; color: #fff;">UPLOAD PENGALAMAN MAGANG/KERJA TERAKHIR (.pdf) <span style="color: #ff4d4d;">*</span></label>
+                <input type="file" id="file_pengalaman" accept=".pdf" class="form-control" required style="width: 100%;">
+            </div>
+
+            <!-- 8. UPLOAD SURAT LAMARAN KERJA -->
+            <div style="margin-bottom: 1.5rem;">
+                <label style="display: block; font-size: 0.88rem; margin-bottom: 0.5rem; color: #fff;">UPLOAD SURAT LAMARAN KERJA (.pdf) <span style="color: #ff4d4d;">*</span></label>
+                <input type="file" id="file_surat_lamaran" accept=".pdf" class="form-control" required style="width: 100%;">
+            </div>
+
+            <!-- 9. UPLOAD CV ATS -->
+            <div style="margin-bottom: 1.5rem;">
+                <label style="display: block; font-size: 0.88rem; margin-bottom: 0.5rem; color: #fff;">UPLOAD CV ATS (.pdf) <span style="color: #ff4d4d;">*</span></label>
+                <input type="file" id="file_cv" accept=".pdf" class="form-control" required style="width: 100%;">
+            </div>
+
+            <!-- 10. UPLOAD PORTOFOLIO / SERTIFIKAT -->
+            <div style="margin-bottom: 2.5rem;">
+                <label style="display: block; font-size: 0.88rem; margin-bottom: 0.5rem; color: #fff;">UPLOAD PORTOFOLIO / SERTIFIKAT KEAHLIAN (.pdf) <span style="color: #ff4d4d;">*</span></label>
+                <input type="file" id="file_portofolio" accept=".pdf" class="form-control" required style="width: 100%;">
+            </div>
+
+            <!-- SUBMIT BUTTON & STATUS -->
+            <div style="text-align: center;">
+                <button type="submit" id="btn-submit" class="btn-neon sweep-effect" style="width: 100%; padding: 1rem; font-size: 1.05rem;">Kirim Formulir Lamaran Sekarang</button>
+                <div id="submit-status" style="margin-top: 1.2rem; font-size: 0.9rem;"></div>
+            </div>
+        </form>
+
+    </main>
+
+    <!-- WADAH COMPONENT FOOTER -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../js/global.js"></script>
+    <script src="../../js/lamaran.js"></script>
+</body>
+</html>
