@@ -6,7 +6,7 @@
  */
 
 // Ganti URL ini dengan Web App Deployment URL dari Google Apps Script Anda
-const GAS_WEB_APP_URL = "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
+const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzzSNBW9hxGScRokAoYFozNe6XRNvCxIn6ORkKbHUlh3RF-ANeq7jr3N9eB-siW6OaWYw/exec";
 
 document.addEventListener("DOMContentLoaded", function () {
     const selectPosisi = document.getElementById("posisi_dilamar");
