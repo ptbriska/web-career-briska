@@ -1,7 +1,7 @@
 /**
  * ==========================================================================
- * BRISKA CAREER - MODERN FUTURISTIC JOBBOARD (js/lowongan.js)
- * Sidebar Filter (Unit, Dept, Status) & Modal Detail Markdown Loader
+ * BRISKA CAREER - JOBBOARD LISTING SCRIPT (js/lowongan.js)
+ * Render Kartu Lowongan + Rentang Tanggal Pendaftaran & Filter
  * ==========================================================================
  */
 
@@ -15,12 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const filterDept = document.getElementById("filter-dept");
     const filterStatus = document.getElementById("filter-status");
     const btnReset = document.getElementById("btn-reset-filter");
-
-    // Modal Elements
-    const jobModal = document.getElementById("job-modal");
-    const closeModal = document.getElementById("close-modal");
-    const modalContent = document.getElementById("modal-markdown-content");
-    const modalFooter = document.getElementById("modal-action-footer");
 
     let jobsData = [];
     const basePath = "../../";
@@ -69,6 +63,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 ? `<span class="badge" style="background: rgba(0, 255, 128, 0.15); color: #00ff80; border: 1px solid rgba(0, 255, 128, 0.3);">🟢 BUKA</span>`
                 : `<span class="badge" style="background: rgba(255, 77, 77, 0.15); color: #ff4d4d; border: 1px solid rgba(255, 77, 77, 0.3);">🔴 DITUTUP</span>`;
 
+            // Format Periode Pendaftaran: dd/mm/yyyy - dd/mm/yyyy
+            const periodeStr = `${job.periode_pendaftaran.mulai} - ${job.periode_pendaftaran.selesai}`;
+
             card.innerHTML = `
                 <div>
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; gap: 0.5rem; flex-wrap: wrap;">
@@ -78,9 +75,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     <h3 style="margin: 0.5rem 0; font-size: 1.2rem; line-height: 1.3;" class="text-gradient">${job.judul}</h3>
                     
-                    <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1rem; display: flex; gap: 0.8rem; flex-wrap: wrap;">
+                    <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.8rem; display: flex; gap: 0.8rem; flex-wrap: wrap;">
                         <span>🏢 ${job.departemen}</span>
                         <span>📍 ${job.lokasi}</span>
+                    </div>
+
+                    <div style="font-size: 0.82rem; color: var(--neon-teal); margin-bottom: 1rem; background: rgba(0, 255, 213, 0.05); padding: 0.4rem 0.8rem; border-radius: 6px; display: inline-block;">
+                        📅 <strong>Periode:</strong> ${periodeStr}
                     </div>
 
                     <p style="font-size: 0.88rem; line-height: 1.5; color: rgba(255,255,255,0.8); margin-bottom: 1.5rem;">
@@ -90,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.05);">
                     <span style="font-size: 0.8rem; color: var(--neon-teal); font-weight: 600;">${job.tipe}</span>
-                    <button class="btn-detail-job btn-neon sweep-effect" style="padding: 0.4rem 1rem; font-size: 0.85rem;">Detail Lowongan</button>
+                    <a href="detail-lowongan.html?id=${job.id}" class="btn-neon sweep-effect" style="padding: 0.4rem 1rem; font-size: 0.85rem; text-decoration: none;">Lihat Detail Lowker</a>
                 </div>
             `;
 
@@ -106,52 +107,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 card.style.boxShadow = "none";
             });
 
-            // Click Handler untuk Buka Modal Detail
-            card.querySelector(".btn-detail-job").addEventListener("click", () => {
-                openJobModal(job);
-            });
-
             jobGrid.appendChild(card);
         });
     }
 
-    // 3. Fungsi Buka Modal & Load File Markdown
-    function openJobModal(job) {
-        modalContent.innerHTML = `<div style="text-align:center; padding:3rem;">Memuat detail lowongan...</div>`;
-        jobModal.style.display = "flex";
-
-        fetch(`${basePath}data/jobs/${job.md_file}`)
-            .then(res => {
-                if (!res.ok) throw new Error("Dokumen detail tidak ditemukan");
-                return res.text();
-            })
-            .then(mdText => {
-                const parsedHtml = typeof marked !== "undefined" ? marked.parse(mdText) : mdText;
-                modalContent.innerHTML = parsedHtml;
-
-                // Set Action Button di Modal
-                if (job.status_tersedia) {
-                    modalFooter.innerHTML = `
-                        <a href="../lamaran/lamaran.html?job_id=${job.id}" class="btn-neon sweep-effect" style="display: inline-block; padding: 0.8rem 2.5rem; text-decoration: none;">
-                            Lamar Posisi Ini Sekarang
-                        </a>`;
-                } else {
-                    modalFooter.innerHTML = `
-                        <button disabled style="background: rgba(255,255,255,0.1); color: var(--text-muted); border: 1px solid rgba(255,255,255,0.2); padding: 0.8rem 2.5rem; border-radius: 50px; cursor: not-allowed;">
-                            Lowongan Ini Sudah Ditutup
-                        </button>`;
-                }
-            })
-            .catch(err => {
-                modalContent.innerHTML = `<div style="color:#ff6b6b; text-align:center;">Gagal memuat detail lowongan. ${err.message}</div>`;
-            });
-    }
-
-    // Close Modal Events
-    if (closeModal) closeModal.addEventListener("click", () => jobModal.style.display = "none");
-    window.addEventListener("click", (e) => { if (e.target === jobModal) jobModal.style.display = "none"; });
-
-    // 4. Filtering Logic (Unit, Dept, Status, & Search)
+    // 3. Filtering Logic (Unit, Dept, Status, & Search)
     function applyFilters() {
         const searchVal = searchInput.value.toLowerCase();
         const unitVal = filterUnit.value;
