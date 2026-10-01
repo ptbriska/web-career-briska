@@ -1,0 +1,46 @@
+[
+  {
+    "id": "tutor-kelas-bisa-2026",
+    "judul": "Tutor & Pengajar Profesional (All Subjects)",
+    "unit": "Kelas Bisa",
+    "departemen": "Education & Academic",
+    "tipe": "Kemitraan / Freelance",
+    "lokasi": "Remote (WFA) / Hybrid Makassar",
+    "status_tersedia": true,
+    "ringkasan": "Kesempatan bergabung sebagai Tutor Live Zoom atau Pengembang Kelas Digital AI dengan skema Fixed Fee / Pasif Royalti.",
+    "md_file": "oktober-2026-tutor-kelas-bisa.md"
+  },
+  {
+    "id": "fullstack-developer-2026",
+    "judul": "Fullstack Software Engineer",
+    "unit": "Pakkakasa Digipro",
+    "departemen": "Technology",
+    "tipe": "Full-time",
+    "lokasi": "Makassar (Hybrid)",
+    "status_tersedia": true,
+    "ringkasan": "Mengembangkan ekosistem platform LMS, CBT, dan sistem ERP internal BRISKA Group berbasis Node.js & Vue/React.",
+    "md_file": "oktober-2026-fullstack-developer.md"
+  },
+  {
+    "id": "editorial-pena-bisa-2026",
+    "judul": "Editor Buku & Modul Edukasi",
+    "unit": "Pena Bisa",
+    "departemen": "Production",
+    "tipe": "Full-time",
+    "lokasi": "Makassar (WFO)",
+    "status_tersedia": false,
+    "ringkasan": "Penyuntingan dan standardisasi konten modul Olimpiade, CPNS, serta buku cerita edukatif interaktif.",
+    "md_file": "oktober-2026-editor-pena-bisa.md"
+  },
+  {
+    "id": "creative-video-editor-2026",
+    "judul": "Senior Motion & Video Editor",
+    "unit": "Barugahub",
+    "departemen": "Creative Media",
+    "tipe": "Full-time",
+    "lokasi": "Makassar (WFO)",
+    "status_tersedia": true,
+    "ringkasan": "Memproduksi konten video edukasi kreatif, promo campaign sosial media, serta rekaman course digital.",
+    "md_file": "oktober-2026-video-editor.md"
+  }
+]
