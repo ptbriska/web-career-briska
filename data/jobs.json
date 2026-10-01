@@ -3,12 +3,44 @@
     "id": "tutor-kelas-bisa-2026",
     "judul": "Tutor & Pengajar Profesional (All Subjects)",
     "unit": "Kelas Bisa",
-    "departemen": "Education & Academic",
+    "departemen": "Kaka Pengajar",
     "tipe": "Kemitraan / Freelance",
     "lokasi": "Remote (WFA) / Hybrid Makassar",
     "status_tersedia": true,
+    "periode_pendaftaran": {
+      "mulai": "01/10/2026",
+      "selesai": "25/10/2026"
+    },
     "ringkasan": "Kesempatan bergabung sebagai Tutor Live Zoom atau Pengembang Kelas Digital AI dengan skema Fixed Fee / Pasif Royalti.",
-    "md_file": "oktober-2026-tutor-kelas-bisa.md"
+    "poster_image": "assets/images/lowker/poster-oktober-2026-tutor-kelas-bisa.png",
+    "detail": {
+      "kualifikasi": [
+        "Pendidikan minimal S1/S2 atau mahasiswa berprestasi tingkat akhir (khusus bidang OSN/Olimpiade)",
+        "Memiliki pengalaman mengajar/menjadi tentor minimal 1 tahun di bidangnya (Olimpiade, CPNS/UTBK, atau Skill Teknis)",
+        "Menguasai penyampaian materi secara komunikatif, interaktif, dan mudah dipahami via Zoom atau rekaman video",
+        "Memiliki koneksi internet stabil dan perangkat laptop yang memadai untuk sesi live streaming/rekaman",
+        "Mengintegrasikan nilai-nilai IKHLAS dan semangat service excellence dalam mendampingi peserta didik"
+      ],
+      "benefit": [
+        "Pilihan Skema Fleksibel: Honorarium Fixed Fee per jam (Live Zoom) atau Passive Income Royalti 25% (Kelas Video LMS)",
+        "Dukungan Operasional Penuh: Disediakan Admin Zoom, Moderator, Template Slide, serta Bank Soal dari Tim Kurikulum",
+        "Sertifikasi Nasional: Akses rekomendasi dan poin loyalitas untuk mengikuti Training of Trainer (ToT) BNSP Gratis",
+        "Branding Eksposur: Nama dan profil pengajar akan dipromosikan dalam katalog dan media sosial resmi BRISKA Group",
+        "Fleksibilitas Waktu: Bebas mengatur jadwal mengajar tanpa mengganggu jadwal pekerjaan utama Anda"
+      ],
+      "informasi_tambahan": [
+        "Bidang Subjek Dibuka: Kelas Bisa Juara (OSN/PKM), Kelas Bisa Lulus (CPNS/UTBK/Kedinasan), Kelas Bisa Skill (IT/Design/Marketing)",
+        "Format Konten: Pengajar dibebaskan memilih menjadi Live Instructor (Zoominar/Bootcamp) atau Video Content Creator (LMS AI Integration)",
+        "Kemitraan Fleksibel: Terbuka untuk akademisi, praktisi industri, maupun profesional tanpa membatasi status kerja di tempat lain"
+      ],
+      "timeline": [
+        {"tahap": "Tahap 1: Administrasi & Portofolio", "tanggal": "01 - 10 Oktober 2026"},
+        {"tahap": "Tahap 2: Microteaching & CBT", "tanggal": "12 - 14 Oktober 2026"},
+        {"tahap": "Tahap 3: Wawancara Kemitraan", "tanggal": "16 - 18 Oktober 2026"},
+        {"tahap": "Tahap 4: Onboarding Tutor", "tanggal": "20 - 22 Oktober 2026"},
+        {"tahap": "Tahap 5: Penandatanganan MoU", "tanggal": "25 Oktober 2026"}
+      ]
+    }
   },
   {
     "id": "fullstack-developer-2026",
@@ -18,8 +50,36 @@
     "tipe": "Full-time",
     "lokasi": "Makassar (Hybrid)",
     "status_tersedia": true,
+    "periode_pendaftaran": {
+      "mulai": "01/10/2026",
+      "selesai": "24/10/2026"
+    },
     "ringkasan": "Mengembangkan ekosistem platform LMS, CBT, dan sistem ERP internal BRISKA Group berbasis Node.js & Vue/React.",
-    "md_file": "oktober-2026-fullstack-developer.md"
+    "poster_image": "assets/images/lowker/poster-oktober-2026-fullstack-developer.png",
+    "detail": {
+      "kualifikasi": [
+        "Pendidikan minimal S1 Teknik Informatika, Ilmu Komputer, Sistem Informasi, atau bidang terkait",
+        "Pengalaman kerja minimal 2 tahun di bidang Software Development (Frontend & Backend)",
+        "Menguasai stack teknologi utama: Node.js/Express, Vue.js / React.js, PostgreSQL, dan Redis",
+        "Terbiasa dengan arsitektur RESTful API, Microservices, Git workflow, dan sistem CI/CD",
+        "Memahami prinsip keamanan web, optimasi performa database, serta unit testing"
+      ],
+      "benefit": [
+        "Gaji kompetitif dan skema insentif performa berbasis sistem MONJA",
+        "Sistem kerja Hybrid (pilihan WFO dan WFA secara proporsional)",
+        "Penyediaan laptop kerja atau tunjangan hardware opsional",
+        "Akses e-course dan kursus sertifikasi berbayar untuk pengembangan skill teknologi",
+        "Kesempatan Lelang Jabatan ke level Tech Lead / CTO Anak PT"
+      ],
+      "informasi_tambahan": [],
+      "timeline": [
+        {"tahap": "Tahap 1: Administrasi & GitHub Review", "tanggal": "01 - 08 Oktober 2026"},
+        {"tahap": "Tahap 2: GCT, SCT & Take-Home PCT", "tanggal": "10 - 12 Oktober 2026"},
+        {"tahap": "Tahap 3: Technical Interview & Live Coding", "tanggal": "15 - 17 Oktober 2026"},
+        {"tahap": "Tahap 4: Onboarding & LATSAR Tahap 1", "tanggal": "19 - 21 Oktober 2026"},
+        {"tahap": "Tahap 5: SPKS & Penempatan Tim Technology", "tanggal": "24 Oktober 2026"}
+      ]
+    }
   },
   {
     "id": "editorial-pena-bisa-2026",
@@ -29,8 +89,36 @@
     "tipe": "Full-time",
     "lokasi": "Makassar (WFO)",
     "status_tersedia": false,
+    "periode_pendaftaran": {
+      "mulai": "15/09/2026",
+      "selesai": "29/09/2026"
+    },
     "ringkasan": "Penyuntingan dan standardisasi konten modul Olimpiade, CPNS, serta buku cerita edukatif interaktif.",
-    "md_file": "oktober-2026-editor-pena-bisa.md"
+    "poster_image": "assets/images/lowker/poster-oktober-2026-editor-pena-bisa.png",
+    "detail": {
+      "kualifikasi": [
+        "Pendidikan minimal S1 Bahasa/Sastra Indonesia, Pendidikan Bahasa, atau bidang ilmu terkait",
+        "Memiliki pengalaman minimal 1 tahun di bidang penerbitan atau penyuntingan naskah",
+        "Memahami EYD/PUEBI, tata bahasa, ejaan, serta teknik copyediting dan substantive editing",
+        "Mampu memeriksa akurasi materi soal/modul persiapan CPNS, UTBK, OSN, atau buku anak",
+        "Terbiasa menggunakan software pengolah kata dan tools kolaborasi digital"
+      ],
+      "benefit": [
+        "Gaji pokok, tunjangan kehadiran, dan bonus pengerjaan judul buku/modul",
+        "Hak royalti khusus untuk naskah karya inovasi internal",
+        "Lingkungan kerja kondusif dengan fasilitas relax corner dan snack pantry",
+        "Pelatihan rutin penulisan kreatif & penyuntingan tingkat lanjut"
+      ],
+      "informasi_tambahan": [
+        "Status Posisi: DITUTUP (Kuota kandidat untuk batch ini telah terpenuhi)"
+      ],
+      "timeline": [
+        {"tahap": "Tahap 1: Administrasi", "tanggal": "15 - 22 September 2026"},
+        {"tahap": "Tahap 2: Tes Penyuntingan Naskah", "tanggal": "24 - 25 September 2026"},
+        {"tahap": "Tahap 3: Wawancara User & HRD", "tanggal": "27 - 28 September 2026"},
+        {"tahap": "Tahap 4: Pengumuman Akhir", "tanggal": "29 September 2026"}
+      ]
+    }
   },
   {
     "id": "creative-video-editor-2026",
@@ -40,7 +128,34 @@
     "tipe": "Full-time",
     "lokasi": "Makassar (WFO)",
     "status_tersedia": true,
+    "periode_pendaftaran": {
+      "mulai": "01/10/2026",
+      "selesai": "24/10/2026"
+    },
     "ringkasan": "Memproduksi konten video edukasi kreatif, promo campaign sosial media, serta rekaman course digital.",
-    "md_file": "oktober-2026-video-editor.md"
+    "poster_image": "assets/images/lowker/poster-oktober-2026-video-editor.png",
+    "detail": {
+      "kualifikasi": [
+        "Pendidikan minimal D3/S1 Desain Komunikasi Visual (DKV), Multimedia, Broadcast, atau sejenisnya",
+        "Memiliki pengalaman minimal 2 tahun sebagai Video Editor atau Motion Graphic Designer",
+        "Menguasai software editing profesional: Adobe Premiere Pro, After Effects, DaVinci Resolve",
+        "Mampu mengolah video pembelajaran LMS, konten reels/TikTok edukasi viral, dan trailer buku",
+        "Memiliki rasa estetika visual, pemahaman pacing, color grading, dan typography yang kuat"
+      ],
+      "benefit": [
+        "Paket gaji dan bonus performa berbasis penyelesaian video per proyek",
+        "Penyediaan PC Editing High-End dan kamera studio lengkap di kantor Barugahub",
+        "Akses koleksi aset materi berbayar (Envato Elements, Motion Array, Epidemic Sound, dll.)",
+        "Lingkungan kerja kreatif Gen-Z Company (Kreatif Gila Day & Kolaborasa Project)"
+      ],
+      "informasi_tambahan": [],
+      "timeline": [
+        {"tahap": "Tahap 1: Administrasi & Showreel Review", "tanggal": "01 - 09 Oktober 2026"},
+        {"tahap": "Tahap 2: PCT Case Study Editing Video", "tanggal": "11 - 13 Oktober 2026"},
+        {"tahap": "Tahap 3: Wawancara Portfolio & FGD", "tanggal": "15 - 17 Oktober 2026"},
+        {"tahap": "Tahap 4: Onboarding Studio Barugahub", "tanggal": "19 - 21 Oktober 2026"},
+        {"tahap": "Tahap 5: SPKS & Penempatan Resmi", "tanggal": "24 Oktober 2026"}
+      ]
+    }
   }
 ]
