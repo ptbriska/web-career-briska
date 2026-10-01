@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Karir - Briska Career</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <!-- WADAH COMPONENT HEADER -->
+    <div id="header-container"></div>
+
+    <main class="container">
+        <!-- Banner/Judul Halaman -->
+        <div class="page-header">
+            <span class="badge badge-unit">PUSAT BANTUAN</span>
+            <h1 class="text-gradient">FAQ Karir BRISKA</h1>
+            <p>Temukan jawaban atas pertanyaan yang paling sering diajukan seputar proses rekrutmen, budaya kerja, dan kemitraan di BRISKA.</p>
+        </div>
+
+        <!-- Kolom Pencarian FAQ -->
+        <div style="max-width: 600px; margin: 0 auto 3rem auto; position: relative;">
+            <input type="text" id="faq-search" class="form-control" placeholder="Cari pertanyaan... (misal: gaji, WFA, tutor)" style="padding: 1rem 1.5rem; font-size: 1rem; border-radius: 50px;">
+        </div>
+
+        <!-- Kontainer Render JSON -->
+        <div id="faq-container" style="max-width: 800px; margin: 0 auto;">
+            <!-- Loading State -->
+            <div class="glass-card" style="text-align: center;">Memuat pertanyaan...</div>
+        </div>
+    </main>
+
+    <!-- WADAH COMPONENT FOOTER -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../js/global.js"></script>
+    <script src="../../js/faq.js"></script>
+</body>
+</html>
